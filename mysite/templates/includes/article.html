@@ -1,0 +1,18 @@
+{% load thumbnail %}
+  <article>
+    <ul>
+      <li>
+        автор: {{ p.autor }}
+      </li>
+      <li>
+        дата публикации: {{ p.pub_date }}
+      </li>
+    </ul>
+    {% thumbnail p.image '100x100px' crop="center" as im %}
+      <img src="{{ im.url }}">
+    {% endthumbnail %}
+    <p>
+      {{ p.text }}
+    </p>
+    <hr>
+  </article>
